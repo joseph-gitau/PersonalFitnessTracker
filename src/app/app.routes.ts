@@ -14,6 +14,6 @@ export const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'workout-log', component: WorkoutLogComponent },
+  { path: 'workout-log', component: WorkoutLogComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
