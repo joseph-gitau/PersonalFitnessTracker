@@ -1,0 +1,20 @@
+<!-- In dashboard.component.html -->
+<div class="dashboard-container">
+  <h2>User Dashboard</h2>
+  <div *ngIf="users.length; else noData">
+    <ul>
+      <li *ngFor="let user of users">
+        <h3>{{ user.name }}</h3>
+        <p>Activities:</p>
+        <ul>
+          <li *ngFor="let workout of user.workouts">
+            {{ workout.date }}: {{ workout.type }} for {{ workout.duration }} minutes, {{ workout.calories }} calories burned
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noData>
+    <p>No user data available.</p>
+  </ng-template>
+</div>

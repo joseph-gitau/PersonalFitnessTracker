@@ -1,0 +1,23 @@
+.dashboard-container {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+li {
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
