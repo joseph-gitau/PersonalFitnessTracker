@@ -1,6 +1,42 @@
 {
-  "users": [
-    { "username": "user", "password": "user" },
-    { "username": "admin", "password": "admin" }
-  ]
+    "users": [
+        { "username": "user", "password": "user" },
+        { "username": "admin", "password": "admin" }
+    ],
+    "workoutLogs": [
+        {
+            "user": "user",
+            "workoutLogs": [
+                {
+                    "date": "2024-05-17",
+                    "type": "Running",
+                    "duration": 30,
+                    "calories": 300
+                },
+                {
+                    "date": "2024-05-18",
+                    "type": "Cycling",
+                    "duration": 45,
+                    "calories": 450
+                }
+            ]
+        },
+        {
+            "user": "admin",
+            "workoutLogs": [
+                {
+                    "date": "2024-05-17",
+                    "type": "Running",
+                    "duration": 30,
+                    "calories": 300
+                },
+                {
+                    "date": "2024-05-18",
+                    "type": "Cycling",
+                    "duration": 45,
+                    "calories": 450
+                }
+            ]
+        }
+    ]
 }

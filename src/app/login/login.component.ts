@@ -10,10 +10,17 @@ import { AuthService } from '../services/auth.service';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
     username: string = '';
     password: string = '';
     errorMessage: string = '';
+
+    // check if user is already logged in and redirect to dashboard
+    ngOnInit() {
+        if (this.authService.isLoggedIn()) {
+            window.location.href = '/dashboard';
+        }
+    }
 
     constructor(private authService: AuthService) {}
 

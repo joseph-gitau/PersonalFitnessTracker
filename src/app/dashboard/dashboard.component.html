@@ -1,6 +1,12 @@
-<!-- In dashboard.component.html -->
 <div class="dashboard-container">
   <h2>User Dashboard</h2>
+
+  <!-- Chart -->
+  <div style="display: block">
+    <canvas baseChart [data]="chartData" [labels]="chartLabels" [options]="chartOptions" [type]="'bar'"></canvas>
+  </div>
+
+  <!-- User Activities -->
   <div *ngIf="users.length; else noData">
     <ul>
       <li *ngFor="let user of users">

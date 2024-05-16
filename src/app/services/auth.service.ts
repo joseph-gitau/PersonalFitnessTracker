@@ -14,6 +14,7 @@ export class AuthService {
         // Fetch user data when AuthService is instantiated
         this.getUsers().subscribe((data) => {
             this.users = data.users;
+            // console.log('Users:', this.users);
         });
     }
 
