@@ -1,15 +1,43 @@
 <nav class="navbar">
-  <ul>
-    <!-- Show different links based on login status -->
-    <ng-container *ngIf="isLoggedIn(); else loggedOutLinks">
-      <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-      <li><a routerLink="/workout-log" routerLinkActive="active">Workout Log</a></li>
-      <li><span>Welcome, {{ getUsername() }}</span></li>
-      <li><a (click)="logout()">Logout</a></li>
-    </ng-container>
-    <ng-template #loggedOutLinks>
-      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-        <li><a routerLink="/register" routerLinkActive="active">Register</a></li>
-    </ng-template>
-  </ul>
+    <div class="navbar-container">
+        <div class="cont">
+            <!-- Hamburger Icon for mobile -->
+            <button class="hamburger" (click)="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="logo"><img src="assets/Logo.png" alt="Logo" /></div>
+        </div>
+        <!-- Navigation Links -->
+        <ul [ngClass]="{ show: isMenuOpen }">
+            <ng-container *ngIf="isLoggedIn(); else loggedOutLinks">
+                <li>
+                    <a routerLink="/dashboard" routerLinkActive="active"
+                        >Dashboard</a
+                    >
+                </li>
+                <li>
+                    <a routerLink="/workout-log" routerLinkActive="active"
+                        >Workout Log</a
+                    >
+                </li>
+                <li>
+                    <span>Welcome, {{ getUsername() }}</span>
+                </li>
+                <li><a (click)="logout()">Logout</a></li>
+            </ng-container>
+            <ng-template #loggedOutLinks>
+                <li>
+                    <a routerLink="/login" routerLinkActive="active">Login</a>
+                </li>
+                <li>
+                    <a routerLink="/register" routerLinkActive="active"
+                        >Register</a
+                    >
+                </li>
+            </ng-template>
+        </ul>
+    </div>
 </nav>

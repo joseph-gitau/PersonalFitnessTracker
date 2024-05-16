@@ -12,8 +12,13 @@ import { AuthService } from '../services/auth.service';
     imports: [CommonModule, RouterModule],
 })
 export class NavComponent {
-    constructor(private authService: AuthService, private router: Router) { }
+    isMenuOpen: boolean = false;
 
+    constructor(private authService: AuthService, private router: Router) {}
+
+    toggleMenu(): void {
+        this.isMenuOpen = !this.isMenuOpen;
+    }
     // Method to check if the user is logged in
     isLoggedIn(): boolean {
         return this.authService.isLoggedIn();

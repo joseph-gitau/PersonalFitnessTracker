@@ -1,31 +1,102 @@
-.navbar {
-  background-color: #007bff;
-  padding: 10px 20px;
+/* Hamburger Icon */
+.hamburger {
+    display: none; /* Hide by default */
+    cursor: pointer;
+    background: #007bff;
+    border: none;
+    padding: 10px;
 }
 
+.navbar {
+    background-color: #007bff;
+    padding: 10px 0;
+}
+.cont {
+    padding: 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 .navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 .navbar li {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 
 .navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
 }
 
-.navbar a.active, .navbar a:hover {
-  background-color: #0056b3;
-  border-radius: 4px;
+.navbar a.active,
+.navbar a:hover {
+    background-color: #0056b3;
+    border-radius: 4px;
 }
 
 .navbar span {
-  color: white;
-  margin-right: 10px;
+    color: white;
+    margin-right: 10px;
+}
+
+.bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 4px auto;
+}
+
+/* Navigation Links */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul.show {
+    display: flex; /* Show the dropdown menu when isMenuOpen is true */
+    flex-direction: column; /* Stack links vertically */
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+    .hamburger {
+        display: block; /* Show the hamburger icon on small screens */
+    }
+    .cont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+
+    .navbar ul {
+        display: none; /* Hide the navigation links by default on small screens */
+    }
+
+    .navbar li {
+        margin: 10px 0; /* Add spacing between menu items */
+    }
 }
